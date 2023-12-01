@@ -1,5 +1,6 @@
 /* This represents the Chats scree and AppBar for the app
 */
+// new change added 
 
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/components/contact.dart';
