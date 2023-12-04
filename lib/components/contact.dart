@@ -16,6 +16,7 @@ class Contact extends StatelessWidget {
           flex: 1,
           child: FractionallySizedBox(
             heightFactor: 0.6,
+            widthFactor: 1.2,
             child: ClipRRect(
               borderRadius: BorderRadius.all(
                 Radius.circular(50),
@@ -46,7 +47,7 @@ class Contact extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w800,
-                      fontSize: 18.0,
+                      fontSize: 17.0,
                     ),
                   ),
                 ),
