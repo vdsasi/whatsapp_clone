@@ -13,52 +13,45 @@ class MyStatus extends StatelessWidget {
       children: [
         SizedBox(
           width: 30,
-          height: 20,
         ),
-        Expanded(
-          flex: 1,
-          child: FractionallySizedBox(
-            heightFactor: 0.55,
-            widthFactor: 1.1,
-            child: ClipRRect(
-              borderRadius: BorderRadius.all(
-                Radius.circular(50),
+        Container(
+          margin: EdgeInsets.only(
+            right: 13,
+          ),
+          child: Stack(
+            alignment: Alignment.bottomRight,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(50.0),
+                ),
+                child: Image.asset(
+                  'assets/images/default_profile_image.jpg',
+                  width: 50,
+                  height: 50,
+                  fit: BoxFit.cover,
+                ),
               ),
-              child: Stack(
-                alignment: Alignment.bottomRight,
-                children: [
-                  Image.asset(
-                    'assets/images/default_profile_image.jpg',
-                    width: 200,
-                    height: 200,
-                    fit: BoxFit.cover,
+              Positioned(
+                right: 0,
+                bottom: 0,
+                child: Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.green,
                   ),
-                  Positioned(
-                    right: 0,
-                    bottom: 0,
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.green,
-                      ),
-                      child: Icon(
-                        Icons.add,
-                        color: Colors.white,
-                      ),
-                    ),
+                  child: Icon(
+                    Icons.add,
+                    size: 17.0,
+                    color: Colors.white,
                   ),
-                ],
+                ),
               ),
-            ),
+            ],
           ),
         ),
-        SizedBox(
-          width: 20,
-          height: 20,
-        ),
         Expanded(
-          flex: 6,
+          // flex: 2,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,13 +59,13 @@ class MyStatus extends StatelessWidget {
               Flexible(
                 child: Container(
                   child: const Text(
-                    "Deepthi Sasidhar Vasamsetti Vasamsetti",
+                    "My Status",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w800,
-                      fontSize: 18.0,
+                      fontSize: 17.0,
                     ),
                   ),
                 ),
@@ -80,7 +73,7 @@ class MyStatus extends StatelessWidget {
               Flexible(
                 child: Container(
                   child: const Text(
-                    "New message is the new message is new message",
+                    "Click here to update the status",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     style: TextStyle(color: Colors.grey),
@@ -90,7 +83,10 @@ class MyStatus extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(width: 30, height: 20),
+        SizedBox(
+          width: 30,
+        ),
+        
       ],
     );
   }

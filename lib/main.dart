@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/WhatsappClone.dart';
+import 'package:whatsapp_clone/components/DottedBorderExample.dart';
 import 'package:whatsapp_clone/screens/main_screen.dart';
 
 void main() {
