@@ -8,7 +8,7 @@ class Pallete {
   static const int contactsColor = 0XFF080808;
 
   static const MaterialColor mainScreenColors = MaterialColor(
-    appBarColor,  
+    appBarColor,
     {
       200: Color(appBarColor),
       50: Color(primaryColor),

@@ -1,6 +1,6 @@
 /* This represents the Chats scree and AppBar for the app
 */
-// new change added 
+// new change added
 
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/components/contact.dart';
@@ -49,7 +49,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ColorfulSafeArea(
-        color:  Color(Pallete.appBarColor),
+        color: const Color(Pallete.appBarColor),
         child: DefaultTabController(
           length: myTabs.length,
           child: Scaffold(
@@ -64,19 +64,18 @@ class MainScreen extends StatelessWidget {
                     floating: true,
                     pinned: true,
                     snap: true,
-                    bottom:  TabBar(
+                    bottom: TabBar(
                       indicatorPadding: EdgeInsets.zero,
                       indicatorColor: Colors.green,
                       unselectedLabelColor: Colors.white,
                       labelColor: Colors.white,
-
                       indicator: UnderlineTabIndicator(
-                        borderSide: BorderSide(width: 4, color: Colors.green),
-                        insets: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.20,
+                        borderSide: const BorderSide(width: 4, color: Colors.green),
+                        insets: EdgeInsets.symmetric(
+                          horizontal: MediaQuery.of(context).size.width * 0.20,
                         ),
-
                       ),
-                      tabs: [
+                      tabs: const [
                         Tab(
                           child: Text(
                             "Chats",
@@ -94,10 +93,10 @@ class MainScreen extends StatelessWidget {
                         Tab(
                           child: Text(
                             "Calls",
-                            style: const TextStyle(fontSize: 15),
+                            style: TextStyle(fontSize: 15),
                           ),
                         ),
-                      ], 
+                      ],
                     ),
                   ),
                 ];
@@ -115,7 +114,7 @@ class MainScreen extends StatelessWidget {
                               (BuildContext context, int index) {
                                 return Container(
                                   alignment: Alignment.center,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     border: Border(
                                       bottom: BorderSide(
                                         width: 0.5,
@@ -126,9 +125,9 @@ class MainScreen extends StatelessWidget {
                                   child: Material(
                                     color: Colors.transparent,
                                     child: InkWell(
-                                      child: Contact(),
+                                      child: const Contact(),
                                       onTap: () {
-                                        print("Pressed");
+                                        // print("Pressed");
                                       },
                                     ),
                                   ),

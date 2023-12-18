@@ -11,18 +11,18 @@ class MyStatus extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(
+        const SizedBox(
           width: 30,
         ),
         Container(
-          margin: EdgeInsets.only(
+          margin: const EdgeInsets.only(
             right: 13,
           ),
           child: Stack(
             alignment: Alignment.bottomRight,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(50.0),
                 ),
                 child: Image.asset(
@@ -36,11 +36,11 @@ class MyStatus extends StatelessWidget {
                 right: 0,
                 bottom: 0,
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.green,
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.add,
                     size: 17.0,
                     color: Colors.white,
@@ -50,43 +50,38 @@ class MyStatus extends StatelessWidget {
             ],
           ),
         ),
-        Expanded(
+        const Expanded(
           // flex: 2,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Flexible(
-                child: Container(
-                  child: const Text(
-                    "My Status",
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w800,
-                      fontSize: 17.0,
-                    ),
+               Flexible(
+                child:  Text(
+                  "My Status",
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 17.0,
                   ),
                 ),
               ),
               Flexible(
-                child: Container(
-                  child: const Text(
-                    "Click here to update the status",
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                    style: TextStyle(color: Colors.grey),
-                  ),
+                child:  Text(
+                  "Click here to update the status",
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  style: TextStyle(color: Colors.grey),
                 ),
               ),
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 30,
         ),
-        
       ],
     );
   }

@@ -1,3 +1,4 @@
+// ignore: file_names
 import "dart:math";
 import "package:flutter/material.dart";
 
@@ -41,7 +42,7 @@ class DottedBorder extends CustomPainter {
           false,
           Paint()
             ..color = i < numberOfWatchedStories ? Colors.grey : Colors.teal
-            ..strokeWidth = 3.4
+            ..strokeWidth = 2.5
             ..style = PaintingStyle.stroke);
       startOfArcInDegree += arcLength + spaceLength;
     }
@@ -60,30 +61,25 @@ class DottedBorderExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-      ),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          SizedBox(
-            width: 70,
-            height: 70,
-            child: Transform.rotate(
-              angle: -pi / 2,
-              child: CustomPaint(
-                painter: DottedBorder(
-                  numberOfStories: numberOfStories,
-                  numberOfWatchedStories: numberOfWatchedStories,
-                ),
-              ),
-            ),
+    if (numberOfStories == 1) {
+      return Container(
+        width: 64,
+        height: 64,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          
+          border: Border.all(
+            color: numberOfWatchedStories == 1
+                ? Colors.grey
+                : Colors.teal, // Choose the color you want for the border
+            width: 2.5, // Adjust the width of the border as needed
           ),
-          // Replace the Container with Image widget
-          SizedBox(
-            width: 60,
-            height: 60,
+        ),
+        child: Padding(
+          padding: const  EdgeInsets.all(4.0),
+          child: SizedBox(
+            width: 50,
+            height: 50,
             child: ClipOval(
               child: Image.asset(
                 'assets/images/default_profile_image.jpg', // Replace with your image URL
@@ -91,8 +87,38 @@ class DottedBorderExample extends StatelessWidget {
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      );
+    }
+
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        SizedBox(
+          width: 60,
+          height: 60,
+          child: Transform.rotate(
+            angle: -pi / 2,
+            child: CustomPaint(
+              painter: DottedBorder(
+                numberOfStories: numberOfStories,
+                numberOfWatchedStories: numberOfWatchedStories,
+              ),
+            ),
+          ),
+        ),
+        // Replace the Container with Image widget
+        SizedBox(
+          width: 50,
+          height: 50,
+          child: ClipOval(
+            child: Image.asset(
+              'assets/images/default_profile_image.jpg', // Replace with your image URL
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

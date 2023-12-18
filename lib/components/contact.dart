@@ -11,14 +11,14 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(width: 30, height: 20),
+        const SizedBox(width: 30, height: 20),
         Expanded(
           flex: 1,
           child: FractionallySizedBox(
             heightFactor: 0.6,
             widthFactor: 1.2,
             child: ClipRRect(
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(50),
               ),
               child: Image.asset(
@@ -28,44 +28,40 @@ class Contact extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 20,
           height: 20,
         ),
-        Expanded(
+        const Expanded(
           flex: 6,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Flexible(
-                child: Container(
-                  child: const Text(
-                    "Deepthi Sasidhar Vasamsetti Vasamsetti",
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w800,
-                      fontSize: 17.0,
-                    ),
+                child: Text(
+                  "Deepthi Sasidhar Vasamsetti Vasamsetti",
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 17.0,
                   ),
                 ),
               ),
               Flexible(
-                child: Container(
-                  child: const Text(
-                    "New message is the new message is new message",
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
-                    style: TextStyle(color: Colors.grey),
-                  ),
+                child: Text(
+                  "New message is the new message is new message",
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  style: TextStyle(color: Colors.grey),
                 ),
               ),
             ],
           ),
         ),
-        SizedBox(width: 30, height: 20),
+        const SizedBox(width: 30, height: 20),
       ],
     );
   }
